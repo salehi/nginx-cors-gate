@@ -1,0 +1,19 @@
+services:
+  cors-proxy:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      ALLOWED_DOMAINS: "*.example.com,localhost,127.0.0.1"
+      UPSTREAM_HOST: backend
+      UPSTREAM_PORT: "80"
+      # ALLOWED_HEADERS: "X-Custom-Header"
+      # ALLOWED_METHODS: "GET, POST, OPTIONS"
+    depends_on:
+      - backend
+
+  # Example backend for testing
+  backend:
+    image: nginx:alpine
+    volumes:
+      - ./test-backend.conf:/etc/nginx/conf.d/default.conf:ro
