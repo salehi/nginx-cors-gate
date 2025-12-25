@@ -1,4 +1,4 @@
-# nginx-cors-proxy
+# nginx-cors-gate
 
 A production-ready, configurable CORS proxy built on nginx with strict origin validation and wildcard domain support.
 
@@ -102,7 +102,7 @@ The health endpoint bypasses CORS validation.
 
 ## Comparison with Alternatives
 
-| Feature | nginx-cors-proxy | [cors-anywhere](https://github.com/Rob--W/cors-anywhere) | [nginx-cors-plus](https://github.com/shakyShane/nginx-cors-plus) | [docker-nginx-cors](https://github.com/maximillianfx/docker-nginx-cors) |
+| Feature | nginx-cors-gate | [cors-anywhere](https://github.com/Rob--W/cors-anywhere) | [nginx-cors-plus](https://github.com/shakyShane/nginx-cors-plus) | [docker-nginx-cors](https://github.com/maximillianfx/docker-nginx-cors) |
 |---------|------------------|----------------|-----------------|-------------------|
 | **Runtime** | nginx (C) | Node.js | nginx | nginx |
 | **Image size** | ~15MB | ~150MB+ | ~15MB | ~15MB |
@@ -119,7 +119,7 @@ The health endpoint bypasses CORS validation.
 
 ### When to Use What
 
-- **nginx-cors-proxy** (this project): Production environments where you need strict origin validation, wildcard support, and minimal resource usage
+- **nginx-cors-gate** (this project): Production environments where you need strict origin validation, wildcard support, and minimal resource usage
 - **cors-anywhere**: When you need dynamic upstream targets (URL in path) or built-in rate limiting; better for multi-tenant proxy scenarios
 - **nginx-cors-plus / docker-nginx-cors**: Quick local development where security doesn't matter
 
@@ -140,7 +140,7 @@ The health endpoint bypasses CORS validation.
 ## Building
 
 ```bash
-docker build -t nginx-cors-proxy .
+docker build -t nginx-cors-gate .
 ```
 
 ## Testing
